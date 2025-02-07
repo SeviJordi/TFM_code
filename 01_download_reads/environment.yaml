@@ -1,0 +1,6 @@
+name: download_reads
+channels:
+  - bioconda
+dependencies:
+  - sra-tools=3.0.0
+  
