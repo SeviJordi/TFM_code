@@ -28,16 +28,24 @@ if [[ "$3" == "panacota" ]]; then
     aln_folder=$2/$(ls $2 | grep Align)
     files=($aln_folder/*.gen)
 
-elif [[ "$3" == "panaroo" ]]; then
-    extension=".aln.fas"
-    aln_folder=$2/aligned_gene_sequences/
-    files=($aln_folder/*.aln.fas)
+elif [[ "$3" == "panaroo" || "$3" == "roary" ]]; then
+    # Create gene family alignments
+    awk -f make_partitions.awk $2/core_alignment_header.embl > $2/core_alignment_header.partitions
+    curdir=$(pwd)
 
-elif [[ "$3" == "roary" ]]; then
-    extension=".fa.aln"
-    aln_folder=$2/pan_genome_sequences/
-    gene_names=$(grep label $2/core_alignment_header.embl | cut -d"=" -f2)
-    files=($(parallel echo $aln_folder/{}.fa.aln ::: $gene_names))
+    mkdir $2/AMAS_genes
+    cd $2/AMAS_genes
+    AMAS.py split -i ../core_gene_alignment.aln -d dna -f fasta -l ../core_alignment_header.partitions -j
+
+for file in *out.fas; do
+	newname=$(echo $file | sed  -e 's/^_//g' -e 's/-out.fas/.aln/g')
+	mv $file $newname
+done
+cd $curdir
+
+    extension=".aln"
+    aln_folder=$2/AMAS_genes/
+    files=($aln_folder/*.aln)
 
 else
     echo "Pangenome tool not recognized. Please use 'panacota', 'panaroo' or 'roary'"
