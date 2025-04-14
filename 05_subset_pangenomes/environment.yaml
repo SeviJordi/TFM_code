@@ -1,0 +1,16 @@
+name: subset_pangenomes
+channels:
+  - conda-forge
+  - defaults
+  - bioconda
+dependencies: 
+  - biopython==1.81
+  - pandas==2.0.3
+  - pip
+  - python>=3.5
+  - pip==24.2
+  - amas==1.0
+  - seqtk==1.4
+  - blast==2.16.0
+  - emboss==6.6.0
+  - parallel

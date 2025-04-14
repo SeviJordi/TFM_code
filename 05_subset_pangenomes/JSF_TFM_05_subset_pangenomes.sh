@@ -10,7 +10,7 @@
 #SBATCH --time=1-00:00:00
 
 # Jordi Sevilla Fortuny
-# Script pto subset core alignments with the intersection with the mapping
+# Script subset core alignments with the intersection with the mapping
 # Uso: JSF_TFM_03_subset_snippy.sh [referencia] [path to alignments] [snippy alignment] [st] [prefix]
 
 if [ "$#" -ne 5 ]; then
