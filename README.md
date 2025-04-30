@@ -19,3 +19,7 @@ echo "export PATH=\$soft_fir:\$PATH" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 Make sure that you install the defined conda environment for each section prior to run the code.
+
+---
+
+The [figures](figures/) folder includes the data and the code necessary to generate the master's thesis figures.
