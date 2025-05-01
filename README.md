@@ -1,11 +1,11 @@
 # TFM_code
-Enhancing Phylogenetic Accuracy through Core Alignment Refinement: A Comparative Tool-Based Study 
+Enhancing Alignment Accuracy through Core Alignment Refinement: A Comparative Tool-Based Study 
 
 ---
 
 This repository contains the code used to carry out the master's thesis in bioinfomatics of Jordi Sevilla Fortuny at the University of Valencia.
 
-To run the code first you must compile the [alnlen.c](software/alnlen.c) with:
+To run the code first you must compile the [alnlen.c](software/alnlen.c) script with:
 ```
 cd software
 gcc -O2 -o alnlen alnlen.c
