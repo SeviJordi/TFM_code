@@ -356,7 +356,7 @@ var_snps_258 <- data_258_l %>%
             panaroodefault = "Panaroo",
             roarydefault = "Roary"), ST = c(ST258 = "ST258"))) +
   scale_alpha_manual("Variable \ngene family",values = c(1,0.7), labels = c("Yes", "No")) +
-  scale_x_discrete( labels = c("FixCore", "HmmCleaner","Raw", "TreeShrink", "TrimAI", "ClipKit")) +
+  scale_x_discrete( labels = c("Raw","FixCore", "HmmCleaner", "TreeShrink", "TrimAI", "ClipKit")) +
   scale_fill_manual(values = tools_colors, guide = "none") +
   theme(axis.text.x = element_text(angle = 60, hjust = 1)) +
   labs(y = "Nº SNPs/gene family", x = "Filtering tool")
@@ -386,7 +386,7 @@ pct_var_258 <- data_258_l %>%
   geom_point(size = 3) +
   theme_bw() +
   geom_abline(intercept = 0, slope = 1, linetype = 2, colour = "darkred" ) +
-  scale_color_manual(values = tools_colors, labels = c("ClipKit","FixCore", "HmmCleaner","Raw", "TreeShrink", "TrimAI")) +
+  scale_color_manual(values = tools_colors, labels = c("Raw","FixCore", "HmmCleaner","TreeShrink", "TrimAI", "ClipKit")) +
   scale_shape(labels = c(panacota = "PanACoTA",
                          panaroo = "Panaroo-PanACoTA",
                          panaroodefault = "Panaroo",
@@ -437,7 +437,7 @@ var_snps_307 <- data_l %>%
             panaroodefault = "Panaroo",
             roarydefault = "Roary"), ST = c(ST258 = "ST258"))) +
   scale_alpha_manual("Variable \ngene family",values = c(1,0.7), labels = c("Yes", "No")) +
-  scale_x_discrete( labels = c("FixCore", "HmmCleaner","Raw", "TreeShrink", "TrimAI", "ClipKit")) +
+  scale_x_discrete( labels = c("Raw", "FixCore", "HmmCleaner","TreeShrink", "TrimAI", "ClipKit")) +
   scale_fill_manual(values = tools_colors, guide = "none") +
   theme(axis.text.x = element_text(angle = 60, hjust = 1)) +
   labs(y = "Nº SNPs/gene family", x = "Filtering tool")
